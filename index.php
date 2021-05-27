@@ -1,21 +1,17 @@
 <?php get_header() ?>
 
-<main id="main">
-   
-    <?php if( have_posts() ) : ?>
+<?php if( have_posts() ) : ?>
 
-        <?php while( have_posts() ) : the_post() ?>
+    <?php while( have_posts() ) : the_post() ?>
 
-            <?php get_template_part('template-parts/content/content') ?>
+        <?php get_template_part('template-parts/content/content') ?>
 
-        <?php endwhile ?>
+    <?php endwhile ?>
 
-    <?php else : ?>
+<?php else : ?>
 
-        <?php _e( 'Sorry, no posts matched your criteria.', 'kolbekussoft' );  ?>
-        
-    <?php endif ?>
+    <?php _e( 'Sorry, no posts matched your criteria.', 'kolbekussoft' );  ?>
 
-</main>
+<?php endif ?>
 
 <?php get_footer() ?>
