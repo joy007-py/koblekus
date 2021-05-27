@@ -24,16 +24,18 @@
 			</a>  
 		</h1>
 
-		<?php 
-			wp_nav_menu(
-				array(
-					'theme_location'    => 'header-menu',
-					'container'         => 'nav',
-					'container_class'   => 'nav-menu d-none d-lg-block',
-					'echo'              => true,
-					'walker' => new KobleKus_Header_Nav_Walker()
-				)
-			) 
+		<?php
+			if( has_nav_menu( 'header-menu' ) ) {
+				wp_nav_menu(
+					array(
+						'theme_location'    => 'header-menu',
+						'container'         => 'nav',
+						'container_class'   => 'nav-menu d-none d-lg-block',
+						'echo'              => true,
+						'walker' => new KobleKus_Header_Nav_Walker()
+					)
+				);
+			}
 		?>
 		
     </div>

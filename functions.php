@@ -23,15 +23,14 @@ require_once KOLBEKUSSOFT_THEME_DIR . '/inc/nav-walker/class-koblekus-footer-nav
 /**
  * Theme customizer class
  */
+require_once KOLBEKUSSOFT_THEME_DIR . '/inc/customizer/dev-test.php';
 require_once KOLBEKUSSOFT_THEME_DIR . '/inc/customizer/koblekus-custom-stack-input-customizer.php';
 require_once KOLBEKUSSOFT_THEME_DIR . '/inc/customizer/koblekus-customizer.php';
-
 
 /**
  * Helper
  */
 require_once KOLBEKUSSOFT_THEME_DIR . '/inc/helper.php';
-
 
 add_theme_support( 'custom-header', array(
         'width'           => 91,

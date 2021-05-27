@@ -66,6 +66,31 @@ function header_section_customizer( $wp_customize ) {
         'description' => '',
         'section' => 'koble_kus_header_section',
     ) ) );
+
+    $wp_customize->add_setting(
+		'favorite_fruit',
+		array(
+			'default'           => array( 'apple', 'orange' )
+		)
+	);
+
+	$wp_customize->add_control(
+		new JT_Customize_Control_Checkbox_Multiple(
+			$wp_customize,
+			'favorite_fruit',
+			array(
+				'section' => 'koble_kus_header_section',
+				'label'   => __( 'Favorite Fruit', 'jt' ),
+				'choices' => array(
+					'apple'      => __( 'Apple',      'jt' ),
+					'banana'     => __( 'Banana',     'jt' ),
+					'date'       => __( 'Date',       'jt' ),
+					'orange'     => __( 'Orange',     'jt' ),
+					'watermelon' => __( 'Watermelon', 'jt' )
+				)
+			)
+		)
+	);
 }
 
 /**

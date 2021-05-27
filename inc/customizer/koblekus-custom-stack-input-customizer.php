@@ -1,5 +1,7 @@
 <?php
 
+require_once ABSPATH . WPINC . '/class-wp-customize-control.php';
+
 class Koble_Kus_Custom_Stack_Input_Customizer extends WP_Customize_Control {
 
     public $type = 'stacked_input';
@@ -20,7 +22,12 @@ class Koble_Kus_Custom_Stack_Input_Customizer extends WP_Customize_Control {
     public function render_content() {
         ?>
             <div>
-                <input type="hidden" name="<?php echo $this->id ?>" value="<?php echo $this->value() ?>">
+                <input type="text" 
+                id="<?php echo htmlspecialchars("_customize-input-{$this->id}");?>"
+                value="<?php echo $this->value() ?>"
+                <?php $this->input_attrs();?>
+                <?php $this->link();?>
+                >
                 <div class="hero-content-col">
                     <h4>Column one</h4>
                     <label>Title</label>

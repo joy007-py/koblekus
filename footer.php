@@ -14,14 +14,16 @@
 
 							echo apply_filters('koblekus_footer_nav_header', '<h4>Useful Links</h4>');					
 
-							wp_nav_menu(
-								array(
-									'theme_location'    => 'footer-menu',
-									'echo'              => true,
-									'walker' => new KobleKus_Footer_Nav_Walker(),
-									'before' => '<i class="bx bx-chevron-right"></i>'
-								)
-							)
+							if( has_nav_menu( 'footer-menu' ) ) {
+								wp_nav_menu(
+									array(
+										'theme_location'    => 'footer-menu',
+										'echo'              => true,
+										'walker' => new KobleKus_Footer_Nav_Walker(),
+										'before' => '<i class="bx bx-chevron-right"></i>'
+									)
+								);
+							}
 						?>
 					</div>
 
