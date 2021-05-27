@@ -23,9 +23,7 @@ require_once KOLBEKUSSOFT_THEME_DIR . '/inc/nav-walker/class-koblekus-footer-nav
 /**
  * Theme customizer class
  */
-require_once KOLBEKUSSOFT_THEME_DIR . '/inc/customizer/dev-test.php';
-require_once KOLBEKUSSOFT_THEME_DIR . '/inc/customizer/koblekus-custom-stack-input-customizer.php';
-require_once KOLBEKUSSOFT_THEME_DIR . '/inc/customizer/koblekus-customizer.php';
+require_once KOLBEKUSSOFT_THEME_DIR . '/inc/koblekus-customizer.php';
 
 /**
  * Helper

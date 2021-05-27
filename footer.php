@@ -20,7 +20,8 @@
 										'theme_location'    => 'footer-menu',
 										'echo'              => true,
 										'walker' => new KobleKus_Footer_Nav_Walker(),
-										'before' => '<i class="bx bx-chevron-right"></i>'
+										'before' => '<i class="bx bx-chevron-right"></i>',
+										'fallback_cb' => 'koble_kus_footer_menu_notice'
 									)
 								);
 							}

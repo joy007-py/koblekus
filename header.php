@@ -32,7 +32,8 @@
 						'container'         => 'nav',
 						'container_class'   => 'nav-menu d-none d-lg-block',
 						'echo'              => true,
-						'walker' => new KobleKus_Header_Nav_Walker()
+						'walker' => new KobleKus_Header_Nav_Walker(),
+						'fallback_cb' => 'koble_kus_header_menu_notice'
 					)
 				);
 			}

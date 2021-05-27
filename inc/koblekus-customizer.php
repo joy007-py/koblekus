@@ -32,7 +32,6 @@ function header_section_customizer( $wp_customize ) {
 
     $wp_customize->add_setting( 'koble_kus_header_hero_text', array(
             'sanitize_callback' => 'sanitize_text_field',
-            'transport'         => 'refresh',
         ) 
     );
 
@@ -45,6 +44,21 @@ function header_section_customizer( $wp_customize ) {
         ) 
     );
 
+    $wp_customize->add_setting( 'koble_kus_header_pages_text', array(
+            'transport'         => 'refresh',
+        ) 
+    );
+
+    $wp_customize->add_control( 'koble_kus_header_pages_text', array(
+            'type'        => 'dropdown-pages',
+            'priority'    => 10,
+            'section'     => 'koble_kus_header_section',
+            'label'       => 'Pages',
+            'description' => 'Choose pages to add'
+        ) 
+    );
+
+
     $wp_customize->add_setting('koble_kus_header_background_image', array(
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
@@ -56,41 +70,6 @@ function header_section_customizer( $wp_customize ) {
         'label' => 'Background hero image',
         'mime_type' => 'image'
     )));
-
-    $wp_customize->add_setting( 'koble_kus_hero_section_content', array(
-        'capability' => 'edit_theme_options',
-    ) );
-
-    $wp_customize->add_control(  new Koble_Kus_Custom_Stack_Input_Customizer( $wp_customize, 'koble_kus_hero_section_content', array(
-        'label' => 'Hero section content',
-        'description' => '',
-        'section' => 'koble_kus_header_section',
-    ) ) );
-
-    $wp_customize->add_setting(
-		'favorite_fruit',
-		array(
-			'default'           => array( 'apple', 'orange' )
-		)
-	);
-
-	$wp_customize->add_control(
-		new JT_Customize_Control_Checkbox_Multiple(
-			$wp_customize,
-			'favorite_fruit',
-			array(
-				'section' => 'koble_kus_header_section',
-				'label'   => __( 'Favorite Fruit', 'jt' ),
-				'choices' => array(
-					'apple'      => __( 'Apple',      'jt' ),
-					'banana'     => __( 'Banana',     'jt' ),
-					'date'       => __( 'Date',       'jt' ),
-					'orange'     => __( 'Orange',     'jt' ),
-					'watermelon' => __( 'Watermelon', 'jt' )
-				)
-			)
-		)
-	);
 }
 
 /**

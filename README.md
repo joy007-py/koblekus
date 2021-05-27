@@ -1,1 +1,1 @@
-# A wordpress theme for protfolio, blogs etc.
+# A wordpress theme for portfolio, blogs etc.
