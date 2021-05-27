@@ -1,3 +1,5 @@
-<?php
+<?php get_header() ?>
 
-echo 'opps 404!';
+<?php echo 'opps 404!'; ?>
+
+<?php get_footer() ?>
