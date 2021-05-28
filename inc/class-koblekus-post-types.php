@@ -48,7 +48,7 @@ if( !class_exists( 'Koble_Kus_Post_Types' ) ) {
                         'has_archive'        => false,
                         'hierarchical'       => false,
                         'menu_position'      => null,
-                        'supports'           => array( 'title', 'editor', 'thumbnail'),
+                        'supports'           => $post_type['supports']
                     ) 
                 );
             }
@@ -64,12 +64,14 @@ if( !class_exists( 'Koble_Kus_Post_Types' ) ) {
                 'service' => array(
                     'name' => 'Services',
                     'singular_name' => 'Service',
-                    'add_title' => 'Enter service title'
+                    'add_title' => 'Enter service title',
+                    'supports' => array( 'title', 'excerpt')
                 ),
                 'testimonial' => array(
                     'name' => 'Testimonials',
                     'singular_name' => 'Testimonial',
-                    'add_title' => 'Enter Author name'
+                    'add_title' => 'Enter Author name',
+                    'supports' => array( 'title', 'excerpt')
                 )
             );
         }
