@@ -65,13 +65,13 @@ if( !class_exists( 'Koble_Kus_Post_Types' ) ) {
                     'name' => 'Services',
                     'singular_name' => 'Service',
                     'add_title' => 'Enter service title',
-                    'supports' => array( 'title', 'excerpt')
+                    'supports' => array( 'title', 'editor', 'excerpt')
                 ),
                 'testimonial' => array(
                     'name' => 'Testimonials',
                     'singular_name' => 'Testimonial',
                     'add_title' => 'Enter Author name',
-                    'supports' => array( 'title', 'excerpt')
+                    'supports' => array( 'title', 'editor', 'excerpt')
                 )
             );
         }

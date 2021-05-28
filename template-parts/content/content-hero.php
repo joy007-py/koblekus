@@ -1,9 +1,3 @@
-<?php 
-// echo '<pre>';
-// var_dump( $args['services'] ); die;
-
-?>
-
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center" style="background: url('<?php echo get_hero_background_image() ?>') top center;">
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
@@ -23,7 +17,7 @@
                   <div class="icon"><i class="ri-palette-line"></i></div>
                   <h4 class="title"><a href=""><?php the_title() ?></a></h4>
                   <ul>
-                    <li><i class="ri-check-double-line"></i><?php the_excerpt() ?></li>
+                    <li><i class="ri-check-double-line"></i><?php the_content() ?></li>
                   </ul>
                 </div>
               </div>

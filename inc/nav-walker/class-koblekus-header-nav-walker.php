@@ -68,8 +68,15 @@ class KobleKus_Header_Nav_Walker extends Walker_Nav_Menu
 		 * @param int      $depth   Depth of menu item. Used for padding.
 		 */
 
-        $class_names = implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
-        $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+		$class_names = apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth );
+		
+		$drop_down_menu_class = apply_filters( 'koble_kus_dropdown_css_class', array( 'drop-down' ) );
+		if( in_array( 'menu-item-has-children', $class_names ) ) {
+			$class_names = $drop_down_menu_class;
+		}
+
+        $class_names = implode( ' ', $class_names);
+		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
 		/**
 		 * Filters the ID applied to a menu item's list item element.

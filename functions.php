@@ -55,11 +55,3 @@ function register_koblekus_menus() {
         )
     );
 }
-
-add_filter('nav_menu_css_class' , 'v123_nav_class' , 10 , 2 );
-function v123_nav_class ($classes, $item) {
-    if (in_array('menu-item-has-children', $classes) ){
-        $classes[] = 'drop-down';
-    }
-    return $classes;
-}
