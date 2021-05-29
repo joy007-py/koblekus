@@ -15,11 +15,6 @@ require_once KOLBEKUSSOFT_THEME_DIR . '/inc/class-koblekus-register-assets.php';
 require_once KOLBEKUSSOFT_THEME_DIR . '/inc/class-koblekus-sidebar.php';
 
 /**
- * Register post types
- */
-require_once KOLBEKUSSOFT_THEME_DIR . '/inc/class-koblekus-post-types.php';
-
-/**
  * Load our nav walker
  */
 require_once KOLBEKUSSOFT_THEME_DIR . '/inc/nav-walker/class-koblekus-header-nav-walker.php';

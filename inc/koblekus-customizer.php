@@ -9,68 +9,14 @@ function koblekus_customizer( $wp_customize ) {
 
     $wp_customize->add_panel( 'koble_kus_theme_options', array(
             'priority' => 1,
-            'title' => 'Homepage Sections',
-            'description' => 'Modify home page section'
+            'title' => 'Theme Options',
+            'description' => 'Modify theme options'
         )
     );
 
-    header_section_customizer( $wp_customize );
     footer_section_customizer( $wp_customize );
 }
 
-/**
- * Header section
- */
-function header_section_customizer( $wp_customize ) {
-    
-    $wp_customize->add_section( 'koble_kus_header_section',  array(
-        'title' => 'Header Section',
-        'priority' => 1,
-        'panel' => 'koble_kus_theme_options',
-        ) 
-    );
-
-    $wp_customize->add_setting( 'koble_kus_header_hero_text', array(
-            'sanitize_callback' => 'sanitize_text_field',
-        ) 
-    );
-
-    $wp_customize->add_control( 'koble_kus_header_hero_text', array(
-        'type'        => 'text',
-        'priority'    => 10,
-        'section'     => 'koble_kus_header_section',
-        'label'       => 'Title',
-        'description' => 'Text put here will be outputted in the header hero title'
-        ) 
-    );
-
-    $wp_customize->add_setting( 'koble_kus_header_pages_text', array(
-            'transport'         => 'refresh',
-        ) 
-    );
-
-    $wp_customize->add_control( 'koble_kus_header_pages_text', array(
-            'type'        => 'dropdown-pages',
-            'priority'    => 10,
-            'section'     => 'koble_kus_header_section',
-            'label'       => 'Pages',
-            'description' => 'Choose pages to add'
-        ) 
-    );
-
-
-    $wp_customize->add_setting('koble_kus_header_background_image', array(
-            'type' => 'theme_mod',
-            'capability' => 'edit_theme_options',
-        )
-    );
-    
-    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'koble_kus_header_background_image', array(
-        'section' => 'koble_kus_header_section',
-        'label' => 'Background hero image',
-        'mime_type' => 'image'
-    )));
-}
 
 /**
  * Footer section
