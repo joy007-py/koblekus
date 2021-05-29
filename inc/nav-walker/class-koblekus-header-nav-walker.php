@@ -1,10 +1,20 @@
 <?php
 
-
+/**
+ * Class KobleKus_Header_Nav_Walker
+ * 
+ * @author Joy Kumar Bera <kusjoybera@gmail.com>
+ */
 class KobleKus_Header_Nav_Walker extends Walker_Nav_Menu 
 {
+	/**
+	 * @var array $menu_items
+	 */
     private $menu_items;
 
+	/**
+	 * @var int $last_menu_id
+	 */
     private $last_menu_id;
     
     /**
@@ -70,7 +80,11 @@ class KobleKus_Header_Nav_Walker extends Walker_Nav_Menu
 
 		$class_names = apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth );
 		
+		/**
+		 * Filters the koblekus dropdown classes
+		 */
 		$drop_down_menu_class = apply_filters( 'koble_kus_dropdown_css_class', array( 'drop-down' ) );
+		
 		if( in_array( 'menu-item-has-children', $class_names ) ) {
 			$class_names = $drop_down_menu_class;
 		}

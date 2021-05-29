@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class KobleKus_Footer_Nav_Walker
+ * 
+ * @author Joy Kumar Bera <kusjoybera@gmail.com>
+ */
 class KobleKus_Footer_Nav_Walker extends Walker_Nav_Menu
 {
     /**
